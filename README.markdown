@@ -34,4 +34,4 @@ Support
 -------
 
 Please log tickets and issues at the
-[Projects site](https://github.com/arusso23/puppet-nagios/issues/)
+[Projects site](https://github.com/arusso/puppet-nagios/issues/)
