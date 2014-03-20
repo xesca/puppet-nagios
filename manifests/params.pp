@@ -1,8 +1,12 @@
+# == Class: nagios::params
+#
+# Params class for nagios
+#
 class nagios::params {
   case $::osfamily {
     'RedHat': {
       $service = 'nagios'
-      $package = 
+      $package =
         [
           'nagios',
           'nagios-plugins-disk',
@@ -27,7 +31,7 @@ class nagios::params {
       # We define all the defaults according to a fresh install from EPEL
       # on RHEL6.  Most of the parameters are included here, and the ones
       # left out are lesser used, and can be added in later if need-be.
-      
+
       $accept_passive_host_checks = true
       $accept_passive_service_checks = true
       $admin_email = 'nagios@localhost'
@@ -39,8 +43,8 @@ class nagios::params {
       $check_result_reaper_frequency = '10'
       $command_file = '/var/spool/nagios/cmd/nagios.cmd'
       $cfg_dir = [ ]
-      $cfg_file = 
-        [ 
+      $cfg_file =
+        [
           '/etc/nagios/objects/commands.cfg',
           '/etc/nagios/objects/contacts.cfg',
           '/etc/nagios/objects/timeperiods.cfg',
@@ -76,6 +80,7 @@ class nagios::params {
       $ocsp_timeout = '5'
       $perfdata_timeout = '5'
       $precached_object_file = '/var/log/nagios/objects.precache'
+      $process_performance_data = false
       $retain_state_information = true
       $retention_update_interval = '60'
       $service_check_timeout_state = 'c'

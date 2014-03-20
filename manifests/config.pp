@@ -13,23 +13,23 @@ class nagios::config {
   # is in fact an array
 
   # TODO: Better validation that these are cfg files
-  if ! is_array( $nagios::cfg_dir ) { 
+  if ! is_array( $nagios::cfg_dir ) {
     $cfg_dir_arr = split( $nagios::cfg_dir, ',' ) }
   else { $cfg_dir_arr = $nagios::cfg_dir }
 
   # TODO: Better validation that these are cfg dirs
-  if ! is_array( $nagios::cfg_file ) { 
+  if ! is_array( $nagios::cfg_file ) {
     $cfg_file_arr = split( $nagios::cfg_file, ',' ) }
   else { $cfg_file_arr = $nagios::cfg_file }
 
   # TODO: Better validation that these are all paths
-  if ! is_array( $nagios::resource_file ) { 
+  if ! is_array( $nagios::resource_file ) {
     $resource_file_arr = split( $nagios::resource_file, ',' ) }
   else { $resource_file_arr = $nagios::resource_file }
 
-  $enable_notifications = 
+  $enable_notifications =
     any2bool( $nagios::enable_notifications ) ? { true => '1', default => '0' }
-  $enable_event_handlers = 
+  $enable_event_handlers =
     any2bool( $nagios::enable_event_handlers ) ? { true => '1', default => '0' }
 
   $authorized_for_system_information =
@@ -61,10 +61,21 @@ class nagios::config {
       true => join($nagios::authorized_for_all_service_commands, ','),
       false=> $nagios::authorized_for_all_service_commands }
 
-   $authorized_for_all_host_commands =
-     is_array($nagios::authorized_for_all_host_commands) ? {
+  $authorized_for_all_host_commands =
+    is_array($nagios::authorized_for_all_host_commands) ? {
       true => join($nagios::authorized_for_all_host_commands, ','),
       false=> $nagios::authorized_for_all_host_commands }
+
+  $process_performance_data = any2bool( $nagios::process_performance_data ) ? {
+    true    => '1',
+    default => '0' }
+
+  $host_perfdata_file = $nagios::host_perfdata_file
+  $service_perfdata_file = $nagios::service_perfdata_file
+  $service_perfdata_file_template = $nagios::service_perfdata_file_template
+  $service_perfdata_file_mode = $nagios::service_perfdata_file_mode
+  $service_perfdata_file_processing_interval = $nagios::service_perfdata_file_processing_interval
+  $service_perfdata_file_processing_command = $nagios::service_perfdata_file_processing_command
 
   # Variables in use by template
   #
@@ -120,7 +131,7 @@ class nagios::config {
     ensure  => 'file',
     owner   => 'nagios',
     group   => 'nagios',
-    mode    => '644',
+    mode    => '0644',
     replace => false,
   }
 }
