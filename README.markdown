@@ -1,6 +1,7 @@
 # nagios Module #
 
-This module provides mechanisms to assist with patch management
+This module manages nagios. It lacks functionality for use with exported
+resources at this time.
 
 # Examples #
 
@@ -18,12 +19,12 @@ This module provides mechanisms to assist with patch management
 License
 -------
 
-None
+See LICENSE file
 
-Change Log
-----------
+Copyright
+---------
 
-* 0.1.0 : Initial Release
+Copyright &copy; 2014 The Regents of the University of California
 
 Contact
 -------
