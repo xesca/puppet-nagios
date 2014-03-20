@@ -695,18 +695,6 @@ host_perfdata_file=<%= @host_perfdata_file %>
 <% else -%>
 service_perfdata_file=<%= @service_perfdata_file %>
 <% end -%>
-<% if @service_perfdata_file_template != '' -%>
-service_perfdata_file_template=<%= @service_perfdata_file_template %>
-<% end -%>
-<% if @service_perfdata_file_mode != '' -%>
-service_perfdata_file_mode=<%= @service_perfdata_file_mode %>
-<% end -%>
-<% if @service_perfdata_file_processing_interval != '' -%>
-service_perfdata_file_processing_interval=<%= @service_perfdata_file_processing_interval %>
-<% end -%>
-<% if @service_perfdata_file_processing_command != '' -%>
-service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_command %>
-<% end -%>
 
 # HOST AND SERVICE PERFORMANCE DATA FILE TEMPLATES
 # These options determine what data is written (and how) to the
@@ -717,7 +705,11 @@ service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_c
 # shown below.
 
 #host_perfdata_file_template=[HOSTPERFDATA]\t$TIMET$\t$HOSTNAME$\t$HOSTEXECUTIONTIME$\t$HOSTOUTPUT$\t$HOSTPERFDATA$
+<% if @service_perfdata_file_template != '' -%>
+service_perfdata_file_template=<%= @service_perfdata_file_template %>
+<% else -%>
 #service_perfdata_file_template=[SERVICEPERFDATA]\t$TIMET$\t$HOSTNAME$\t$SERVICEDESC$\t$SERVICEEXECUTIONTIME$\t$SERVICELATENCY$\t$SERVICEOUTPUT$\t$SERVICEPERFDATA$
+<% end -%>
 
 # HOST AND SERVICE PERFORMANCE DATA FILE MODES
 # This option determines whether or not the host and service
@@ -727,7 +719,11 @@ service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_c
 # likely want the defult append ("a") mode.
 
 #host_perfdata_file_mode=a
+<% if @service_perfdata_file_mode != '' -%>
+service_perfdata_file_mode=<%= @service_perfdata_file_mode %>
+<% else -%>
 #service_perfdata_file_mode=a
+<% end -%>
 
 # HOST AND SERVICE PERFORMANCE DATA FILE PROCESSING INTERVAL
 # These options determine how often (in seconds) the host and service
@@ -736,7 +732,11 @@ service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_c
 # processed.
 
 #host_perfdata_file_processing_interval=0
+<% if @service_perfdata_file_processing_interval != '' -%>
+service_perfdata_file_processing_interval=<%= @service_perfdata_file_processing_interval %>
+<% else -%>
 #service_perfdata_file_processing_interval=0
+<% end -%>
 
 # HOST AND SERVICE PERFORMANCE DATA FILE PROCESSING COMMANDS
 # These commands are used to periodically process the host and
@@ -744,7 +744,11 @@ service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_c
 # processing occurs is determined by the options above.
 
 #host_perfdata_file_processing_command=process-host-perfdata-file
+<% if @service_perfdata_file_processing_command != '' -%>
+service_perfdata_file_processing_command=<%= @service_perfdata_file_processing_command %>
+<% else -%>
 #service_perfdata_file_processing_command=process-service-perfdata-file
+<% end -%>
 
 # OBSESS OVER SERVICE CHECKS OPTION
 # This determines whether or not Nagios will obsess over service
