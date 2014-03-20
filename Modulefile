@@ -1,5 +1,5 @@
 name 'arusso-nagios'
-version '0.2.0'
+version '0.2.1'
 summary 'A Nagios management module'
 description 'This module manages the nagios server, as well as the installation
   of plugins.'
