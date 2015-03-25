@@ -92,6 +92,7 @@ class nagios::params {
       $use_retained_program_state = true
       $use_retained_scheduling_info = true
       $use_syslog = true
+      $p1_file = '/usr/sbin/p1.pl'
     }
     'Debian': {
       $service = 'nagios3'
@@ -125,11 +126,10 @@ class nagios::params {
       $check_result_path = '/var/lib/nagios3/spool/checkresults'
       $check_result_reaper_frequency = '10'
       $command_file = '/var/lib/nagios3/rw/nagios.cmd'
-      $cfg_dir = [ '/etc/nagios3/conf.d' ]
+      $cfg_dir = [ '/etc/nagios3/conf.d', '/etc/nagios-plugins/config' ]
       $cfg_file =
         [
           '/etc/nagios3/commands.cfg',
-          '/etc/nagios3/resource.cfg',
         ]
       $debug_file = '/var/log/nagios3/nagios.debug'
       $debug_level = '0'
@@ -158,6 +158,7 @@ class nagios::params {
       $notification_timeout = '30'
       $object_cache_file = '/var/cache/nagios3/objects.cache'
       $ocsp_timeout = '5'
+      $p1_file = '/usr/lib/nagios3/p1.pl'
       $perfdata_timeout = '5'
       $precached_object_file = '/var/cache/nagios3/objects.precache'
       $process_performance_data = false

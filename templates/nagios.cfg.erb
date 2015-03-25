@@ -502,7 +502,7 @@ retain_state_information=1
 # This file is used only if the retain_state_information
 # variable is set to 1.
 
-state_retention_file=<% @state_retention_file %>
+state_retention_file=<%= @state_retention_file %>
 
 # RETENTION DATA UPDATE INTERVAL
 # This setting determines how often (in minutes) that Nagios
@@ -940,7 +940,7 @@ date_format=us
 # embedded Perl interpreter) is located.  If you didn't compile
 # Nagios with embedded Perl support, this option has no effect.
 
-p1_file=/usr/sbin/p1.pl
+p1_file=<%= @p1_file %>
 
 # EMBEDDED PERL INTERPRETER OPTION
 # This option determines whether or not the embedded Perl interpreter

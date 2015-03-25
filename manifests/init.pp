@@ -132,6 +132,7 @@ class nagios (
   $enable_notifications = hiera( 'nagios::enable_notifications', $nagios::params::enable_notifications ),
   $host_perfdata_file = hiera( 'nagios::host_perfdata_file', '' ),
   $object_cache_file = hiera( 'nagios::object_cache_file', $nagios::params::object_cache_file ),
+  $p1_file = hiera( 'nagios::p1_file', $nagios::params::p1_file ),
   $precached_object_file = hiera( 'nagios::precached_object_file', $nagios::params::precached_object_file ),
   $process_performance_data = hiera( 'nagios::process_performance_data', $nagios::params::process_performance_data ),
   $resource_file = hiera( 'nagios::resource_file', $nagios::params::resource_file ),
