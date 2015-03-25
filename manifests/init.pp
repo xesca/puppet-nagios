@@ -172,6 +172,20 @@ class nagios (
           $temp_path_default='/tmp'
         }
         default: { fail($unsupported_message) } } }
+
+   'Debian': {
+          $nagios_cfg = '/etc/nagios3/nagios.cfg'
+          $cgi_cfg = '/etc/nagios3/cgi.cfg'
+          $service = 'nagios3'
+          $package = 'nagios3'
+          $check_result_path_default = '/var/log/nagios3/spool/checkresults'
+          $check_result_reaper_frequency_default = '10'
+          $object_cache_file_default = '/var/log/nagios3/objects.cache'
+          $precached_object_file_default = '/var/log/nagios3/objects.precache'
+          $status_file_default='/var/log/nagios3/status.dat'
+          $temp_file_default='/var/log/nagios3/nagios.tmp'
+          $temp_path_default='/tmp'
+    }
     default: {
       fail($unsupported_message) }
   }

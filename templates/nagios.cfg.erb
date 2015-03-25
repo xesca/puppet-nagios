@@ -5,7 +5,7 @@
 # for historical purposes.  This should be the first option specified
 # in the config file!!!
 
-log_file=/var/log/nagios/nagios.log
+log_file=<%= @log_file %>
 
 # OBJECT CONFIGURATION FILE(S)
 # These are the object configuration files in which you define hosts,
@@ -118,7 +118,7 @@ command_check_interval=-1
 # directory level instead of on the file, as the file is deleted every
 # time its contents are processed.
 
-command_file=/var/spool/nagios/cmd/nagios.cmd
+command_file=<%= @command_file %>
 
 # EXTERNAL COMMAND BUFFER SLOTS
 # This settings is used to tweak the number of items or "slots" that
@@ -196,7 +196,7 @@ log_rotation_method=d
 # This is the directory where archived (rotated) log files should be
 # placed (assuming you've chosen to do log rotation).
 
-log_archive_path=/var/log/nagios/archives
+log_archive_path=<%= @log_archive_path %>
 
 # LOGGING OPTIONS
 # If you want messages logged to the syslog facility, as well as the
@@ -502,7 +502,7 @@ retain_state_information=1
 # This file is used only if the retain_state_information
 # variable is set to 1.
 
-state_retention_file=/var/log/nagios/retention.dat
+state_retention_file=<% @state_retention_file %>
 
 # RETENTION DATA UPDATE INTERVAL
 # This setting determines how often (in minutes) that Nagios
@@ -1089,7 +1089,7 @@ enable_environment_macros=1
 #          1024 = Comments
 #          2048 = Macros
 
-debug_level=0
+debug_level=<%= @debug_level %>
 
 # DEBUG VERBOSITY
 # This option determines how verbose the debug log out will be.
@@ -1102,7 +1102,7 @@ debug_verbosity=1
 # DEBUG FILE
 # This option determines where Nagios should write debugging information.
 
-debug_file=/var/log/nagios/nagios.debug
+debug_file=<%= @debug_file %>
 
 # MAX DEBUG FILE SIZE
 # This option determines the maximum size (in bytes) of the debug file.  If
