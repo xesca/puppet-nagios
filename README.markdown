@@ -21,18 +21,17 @@ License
 
 See LICENSE file
 
-Copyright
----------
-
-Copyright &copy; 2014 The Regents of the University of California
 
 Contact
 -------
 
-Aaron Russo <arusso@berkeley.edu>
+Xesc Arbona <x.arbona@topdesk.com>
+
 
 Support
 -------
 
 Please log tickets and issues at the
-[Projects site](https://github.com/arusso/puppet-nagios/issues/)
+[Projects site](https://github.com/xesca/puppet-nagios/issues/)
+
+Original module: https://github.com/arusso/puppet-nagios/
