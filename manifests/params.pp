@@ -162,6 +162,7 @@ class nagios::params {
       $perfdata_timeout = '5'
       $precached_object_file = '/var/cache/nagios3/objects.precache'
       $process_performance_data = false
+      $resource_file = ['/etc/nagios3/resource.cfg',]
       $retain_state_information = true
       $retention_update_interval = '60'
       $service_check_timeout_state = 'c'
